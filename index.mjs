@@ -42,7 +42,7 @@ const countries = await Promise.all((await catalog.$$('.mw-category-group')).map
     }
 }));
 
-// TODO: add skip rules e.g. [{ 'non-nullable': 'country' }, { excludeInRegionsName: 'historical', 'ethnographic' }]
+// TODO: add skip rules e.g. { 'non-nullable': ['country'], excludeInRegionsName: ['historical', 'ethnographic'] }
 async function* parseRegions(countries) {
     for (const country of countries) {
         if (country) {
